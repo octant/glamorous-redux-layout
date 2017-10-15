@@ -34,7 +34,9 @@ class App extends Component {
   render () {
     return (
       <div>
-        <Content theme={theme} />
+        <Content theme={theme} layout={this.props.layout}>
+          <h1>Content</h1>
+        </Content>
         <NavBar theme={theme} />
         <SubNav theme={theme} />
         <SideBar theme={theme}>

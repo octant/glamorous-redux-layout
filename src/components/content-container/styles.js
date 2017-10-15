@@ -1,13 +1,16 @@
 import glamorous from 'glamorous'
 
-export const ContentContainer = glamorous.div(({layout}) => {
+export const ContentContainer = glamorous.div(({layout, theme}) => {
+  const top = layout.navbarHeight + layout.subnavHeight
+  const left = layout.sidebarWidth
+
   return {
     position: 'absolute',
-    top: '7rem',
-    left: '16rem',
-    width: 'calc(100vw - 16rem)',
-    minHeight: 'calc(100vh - 7rem)',
+    top: `${top}rem`,
+    left: `${left}rem`,
+    width: `calc(100vw - ${left}rem)`,
+    minHeight: `calc(100vh - ${top}rem)`,
     padding: '0.5rem',
-    backgroundColor: '#1e1e1e'
+    backgroundColor: theme.colors.backgroundDark3
   }
 })
