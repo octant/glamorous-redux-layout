@@ -37,7 +37,7 @@ class App extends Component {
         <Content theme={theme} layout={this.props.layout}>
           <h1>Content</h1>
         </Content>
-        <NavBar theme={theme} />
+        <NavBar theme={theme} layout={this.props.layout} />
         <SubNav theme={theme} />
         <SideBar theme={theme}>
           <Links>

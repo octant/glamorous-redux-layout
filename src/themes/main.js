@@ -9,6 +9,7 @@ const main = {
     accent1: '#194EFF',
     accent2: '#000000',
     accent3: '#000000',
+    brandText: 'white',
     text: '#A1A6Ab',
     secondaryText: '#000000',
     alternateText: '#000000'
