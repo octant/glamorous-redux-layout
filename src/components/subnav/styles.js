@@ -1,29 +1,25 @@
 import glamorous from 'glamorous'
 
-export const SubNav = glamorous.div(({layout}) => {
+export const SubNav = glamorous.div(({layout, theme}) => {
+  const top = layout.navbarHeight
+  const left = layout.sidebarWidth
+  const height = layout.subnavHeight
+
   return {
     position: 'fixed',
-    top: '4rem',
-    left: '16rem',
-    height: '3rem',
-    width: 'calc(100vw - 16rem)',
-    backgroundColor: '#252526'
+    top: `${top}rem`,
+    left: `${left}rem`,
+    height: `${height}rem`,
+    width: `calc(100vw - ${left}rem)`,
+    color: theme.colors.navbarText,
+    backgroundColor: theme.colors.backgroundDark2
   }
 })
 
-export const SubNavSpacer = glamorous.div(({layout}) => {
-  return {
-    width: '2rem',
-    height: '3rem',
-    float: 'left'
-  }
-})
-
-export const TitleArea = glamorous.div(({layout}) => {
+export const TitleArea = glamorous.div(({theme}) => {
   return {
     padding: '0.8em',
     fontSize: '1.2em',
-    color: 'white',
     margin: '0 0.2em'
   }
 })
