@@ -37,7 +37,6 @@ class App extends Component {
         <Content theme={theme} layout={this.props.layout}>
           <h1>Content</h1>
         </Content>
-        <NavBar theme={theme} layout={this.props.layout} />
         <SubNav theme={theme} layout={this.props.layout} />
         <SideBar theme={theme} layout={this.props.layout}>
           <Links>
@@ -46,6 +45,7 @@ class App extends Component {
             <Link id='2' onClick={this.handleClick} selected={this.state.selectedLink === '2'}><Icon className='fa fa-gears' /> Config</Link>
           </Links>
         </SideBar>
+        <NavBar theme={theme} layout={this.props.layout} />
       </div>
     )
   }
