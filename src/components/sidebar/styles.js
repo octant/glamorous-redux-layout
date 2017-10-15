@@ -1,16 +1,25 @@
 import glamorous from 'glamorous'
 
-export const SideBar = glamorous.div({
-  position: 'fixed',
-  top: '4rem',
-  left: '0',
-  minWidth: '16rem',
-  height: 'calc(100vh - 4rem)'
-}, ({theme}) => ({
-  backgroundColor: theme.colors.backgroundDark1
-}))
+export const SideBar = glamorous.div(({layout, theme}) => {
+  const top = layout.navbarHeight
+  const width = layout.sidebarWidth
 
-export const SideBarSpacer = glamorous.div({
-  height: '3rem',
-  width: '16rem'
+  return {
+    position: 'fixed',
+    top: `${top}rem`,
+    left: '0',
+    width: `${width}rem`,
+    height: `calc(100vh - ${top}rem)`,
+    backgroundColor: theme.colors.backgroundDark1
+  }
+})
+
+export const SideBarSpacer = glamorous.div(({layout, theme}) => {
+  const height = layout.subnavHeight
+  const width = layout.sidebarWidth
+
+  return {
+    height: `${height}rem`,
+    width: `${width}rem`
+  }
 })
