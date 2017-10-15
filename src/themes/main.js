@@ -14,6 +14,9 @@ const main = {
     text: '#A1A6Ab',
     secondaryText: '#000000',
     alternateText: '#000000'
+  },
+  text: {
+    brandSize: 1.2
   }
 }
 
