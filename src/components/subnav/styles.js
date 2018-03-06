@@ -18,8 +18,8 @@ export const SubNav = glamorous.div(({layout, theme}) => {
 
 export const TitleArea = glamorous.div(({theme}) => {
   return {
-    padding: '0.8em',
-    fontSize: '1.2em',
-    margin: '0 0.2em'
+    padding: '0.5em',
+    fontSize: '1.1em',
+    margin: '0.5em 0.2em'
   }
 })
