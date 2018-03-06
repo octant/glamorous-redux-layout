@@ -16,6 +16,8 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case INITIALIZE_LAYOUT:
+      return {...state, ...action.payload}
     default:
       return state
   }
@@ -25,7 +27,8 @@ export const initialize = (savedLayout) => {
   // TODO rehydrate state
   return dispatch => {
     dispatch({
-      type: INITIALIZE_LAYOUT
+      type: INITIALIZE_LAYOUT,
+      payload: savedLayout
     })
   }
 }
