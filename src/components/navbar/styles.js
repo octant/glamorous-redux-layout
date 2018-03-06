@@ -18,7 +18,7 @@ export const NavBar = glamorous.div(({layout, theme}) => {
 })
 
 export const BrandArea = glamorous.div(({layout, theme}) => {
-  const width = layout.sidebarWidth
+  const width = layout.huge
   const fontSize = theme.text.brandSize
 
   return {
