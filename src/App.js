@@ -37,7 +37,19 @@ class App extends Component {
         <Content theme={theme} layout={this.props.layout}>
           <h1>Content</h1>
         </Content>
-        <SubNav theme={theme} layout={this.props.layout} />
+        <SubNav theme={theme} layout={this.props.layout}>
+          <Links>
+            <Link id='3' onClick={this.handleClick} selected={this.state.selectedLink === '3'} position='top'>
+              About
+            </Link>
+            <Link id='4' onClick={this.handleClick} selected={this.state.selectedLink === '4'} position='top'>
+              My Tasks
+            </Link>
+            <Link id='5' onClick={this.handleClick} selected={this.state.selectedLink === '5'} position='top'>
+              Account
+            </Link>
+          </Links>
+        </SubNav>
         <SideBar theme={theme} layout={this.props.layout}>
           <Links>
             <Link id='0' onClick={this.handleClick} selected={this.state.selectedLink === '0'}><Icon className='fa fa-home' /> Home</Link>
