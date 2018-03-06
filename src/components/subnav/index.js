@@ -6,11 +6,11 @@ import {
   TitleArea
 } from './styles'
 
-const Wrapper = ({layout, theme}) => (
+const Wrapper = ({children, layout, theme}) => (
   <ThemeProvider theme={theme}>
     <SubNav layout={layout}>
       <TitleArea>
-        <span className='title'><i className='fa fa-tachometer' /> Dashboard</span>
+        {children}
       </TitleArea>
     </SubNav>
   </ThemeProvider>
