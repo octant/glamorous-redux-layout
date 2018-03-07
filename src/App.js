@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 import { ThemeProvider } from 'glamorous'
 import { connect } from 'react-redux'
 
-import { initialize } from './modules/layout'
-
 import theme from './themes/main'
 import Content from './components/content-container'
 import NavBar from './components/navbar'
@@ -25,10 +23,6 @@ class App extends Component {
       selectedLink: '0'
     }
 
-    this.props.dispatch(initialize({
-      sidebarWidth: 10
-    }))
-
     this.handleClick = this.handleClick.bind(this)
   }
 
@@ -42,10 +36,10 @@ class App extends Component {
     return (
       <ThemeProvider theme={theme}>
         <div>
-          <Content theme={theme} layout={this.props.layout}>
+          <Content layout={this.props.layout}>
             <h1>Content</h1>
           </Content>
-          <SubNav theme={theme} layout={this.props.layout}>
+          <SubNav layout={this.props.layout}>
             <Links>
               <Link id='3' onClick={this.handleClick} selected={this.state.selectedLink === '3'} position='top'>
                 About
@@ -58,14 +52,14 @@ class App extends Component {
               </Link>
             </Links>
           </SubNav>
-          <SideBar theme={theme} layout={this.props.layout}>
+          <SideBar layout={this.props.layout}>
             <Links>
               <Link id='0' onClick={this.handleClick} selected={this.state.selectedLink === '0'}><Icon className='fa fa-home' /> Home</Link>
               <Link id='1' onClick={this.handleClick} selected={this.state.selectedLink === '1'}><Icon className='fa fa-tachometer' /> Dashboard</Link>
               <Link id='2' onClick={this.handleClick} selected={this.state.selectedLink === '2'}><Icon className='fa fa-gears' /> Config</Link>
             </Links>
           </SideBar>
-          <NavBar theme={theme} layout={this.props.layout} />
+          <NavBar layout={this.props.layout} />
         </div>
       </ThemeProvider>
     )
