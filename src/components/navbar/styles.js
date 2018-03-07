@@ -27,7 +27,7 @@ export const NavBar = connect(mapStateToProps)(glamorous.div(({layout, theme}) =
 }))
 
 export const BrandArea = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
-  const width = layout.huge
+  const width = theme.text.huge
   const fontSize = theme.text.brandSize
 
   return {

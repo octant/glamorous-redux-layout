@@ -16,7 +16,13 @@ const main = {
     alternateText: '#000000'
   },
   text: {
-    brandSize: 1.2
+    brandSize: 1.2,
+    baseSize: 1,
+    tiny: 0.5,
+    small: 3,
+    medium: 4,
+    large: 6,
+    huge: 16
   }
 }
 

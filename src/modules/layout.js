@@ -2,14 +2,7 @@ export const INITIALIZE_LAYOUT = 'forms/INITIALIZE'
 export const UPDATE_LAYOUT = 'forms/SUBMIT'
 
 // All units in rem
-const initialState = {
-  baseSize: 1,
-  tiny: 0.5,
-  small: 3,
-  medium: 4,
-  large: 6,
-  huge: 16
-}
+const initialState = {}
 
 export default (state = initialState, action) => {
   switch (action.type) {
