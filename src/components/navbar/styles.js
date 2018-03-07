@@ -24,7 +24,7 @@ export const BrandArea = glamorous.div(({layout, theme}) => {
   return {
     top: '0',
     width: `${width}rem`,
-    paddingLeft: '1em',
+    paddingLeft: '1rem',
     fontSize: `${fontSize}rem`,
     textTransform: 'uppercase',
     fontWeight: '300'
