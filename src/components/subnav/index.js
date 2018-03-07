@@ -5,7 +5,7 @@ import {
   TitleArea
 } from './styles'
 
-const Wrapper = ({children, layout, theme}) => (
+const Wrapper = ({children, layout}) => (
   <SubNav layout={layout}>
     <TitleArea>
       {children}

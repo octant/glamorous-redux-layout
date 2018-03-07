@@ -5,7 +5,7 @@ import {
   SideBarSpacer as Spacer
 } from './styles'
 
-const Wrapper = ({theme, layout, children}) => (
+const Wrapper = ({layout, children}) => (
   <SideBar layout={layout}>
     <Spacer layout={layout} />
     {children}
