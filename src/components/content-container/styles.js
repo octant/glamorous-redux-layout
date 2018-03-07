@@ -2,13 +2,18 @@ import glamorous from 'glamorous'
 import { connect } from 'react-redux'
 
 const mapStateToProps = (state, props) => {
-  const layout = {...props.layout, navbar: state.navbar}
+  const layout = {
+    ...props.layout,
+    navbar: state.navbar,
+    sidebar: state.sidebar
+  }
+
   return {layout}
 }
 
 export const ContentContainer = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
   const top = layout.navbar.height + layout.subnavHeight
-  const left = layout.sidebarWidth
+  const left = layout.sidebar.width
 
   return {
     position: 'absolute',

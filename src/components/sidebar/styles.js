@@ -2,13 +2,17 @@ import glamorous from 'glamorous'
 import { connect } from 'react-redux'
 
 const mapStateToProps = (state, props) => {
-  const layout = {...props.layout, navbar: state.navbar}
+  const layout = {
+    ...props.layout,
+    navbar: state.navbar,
+    sidebar: state.sidebar
+  }
   return {layout}
 }
 
 export const SideBar = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
   const top = layout.navbar.height
-  const width = layout.sidebarWidth
+  const width = layout.sidebar.width
 
   return {
     position: 'fixed',
@@ -22,7 +26,7 @@ export const SideBar = connect(mapStateToProps)(glamorous.div(({layout, theme}) 
 
 export const SideBarSpacer = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
   const height = layout.subnavHeight
-  const width = layout.sidebarWidth
+  const width = layout.sidebar.width
 
   return {
     height: `${height}rem`,

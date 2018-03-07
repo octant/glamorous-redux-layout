@@ -1,20 +1,22 @@
 import glamorous from 'glamorous'
 import { connect } from 'react-redux'
 
-const mapStateToProps = (state) => {
-  const { height } = state.navbar
-
-  return {
-    height
+const mapStateToProps = (state, props) => {
+  const layout = {
+    ...props.layout,
+    navbar: state.navbar,
+    sidebar: state.sidebar
   }
+
+  return {layout}
 }
 
-export const NavBar = connect(mapStateToProps)(glamorous.div(({layout, theme, height}) => {
+export const NavBar = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
   return {
     position: 'fixed',
     top: '0',
     left: '0',
-    height: `${height}rem`,
+    height: `${layout.navbar.height}rem`,
     width: '100vw',
     display: 'flex',
     flexDirection: 'column',
