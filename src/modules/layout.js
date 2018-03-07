@@ -8,10 +8,7 @@ const initialState = {
   small: 3,
   medium: 4,
   large: 6,
-  huge: 16,
-  navbarHeight: 4,
-  subnavHeight: 3,
-  sidebarWidth: 16
+  huge: 16
 }
 
 export default (state = initialState, action) => {

@@ -5,7 +5,8 @@ const mapStateToProps = (state, props) => {
   const layout = {
     ...props.layout,
     navbar: state.navbar,
-    sidebar: state.sidebar
+    sidebar: state.sidebar,
+    subnav: state.subnav
   }
   return {layout}
 }
@@ -25,7 +26,7 @@ export const SideBar = connect(mapStateToProps)(glamorous.div(({layout, theme}) 
 }))
 
 export const SideBarSpacer = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
-  const height = layout.subnavHeight
+  const height = layout.subnav.height
   const width = layout.sidebar.width
 
   return {
