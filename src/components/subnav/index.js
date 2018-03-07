@@ -1,5 +1,4 @@
 import React from 'react'
-import { ThemeProvider } from 'glamorous'
 
 import {
   SubNav,
@@ -7,13 +6,11 @@ import {
 } from './styles'
 
 const Wrapper = ({children, layout, theme}) => (
-  <ThemeProvider theme={theme}>
-    <SubNav layout={layout}>
-      <TitleArea>
-        {children}
-      </TitleArea>
-    </SubNav>
-  </ThemeProvider>
+  <SubNav layout={layout}>
+    <TitleArea>
+      {children}
+    </TitleArea>
+  </SubNav>
 )
 
 export default Wrapper

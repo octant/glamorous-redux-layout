@@ -1,5 +1,4 @@
 import React from 'react'
-import { ThemeProvider } from 'glamorous'
 
 import {
   SideBar,
@@ -7,12 +6,10 @@ import {
 } from './styles'
 
 const Wrapper = ({theme, layout, children}) => (
-  <ThemeProvider theme={theme}>
-    <SideBar layout={layout}>
-      <Spacer layout={layout} />
-      {children}
-    </SideBar>
-  </ThemeProvider>
+  <SideBar layout={layout}>
+    <Spacer layout={layout} />
+    {children}
+  </SideBar>
 )
 
 export default Wrapper
