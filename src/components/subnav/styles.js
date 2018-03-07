@@ -28,10 +28,10 @@ export const SubNav = connect(mapStateToProps)(glamorous.div(({layout, theme}) =
   }
 }))
 
-export const TitleArea = glamorous.div(({theme}) => {
+export const TitleArea = glamorous.div(({layout, theme}) => {
   return {
-    padding: '0.5em',
+    position: 'absolute',
     fontSize: '1.1em',
-    margin: '0.5em 0.2em'
+    bottom: '0.4em'
   }
 })
