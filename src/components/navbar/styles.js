@@ -1,8 +1,15 @@
 import glamorous from 'glamorous'
+import { connect } from 'react-redux'
 
-export const NavBar = glamorous.div(({layout, theme}) => {
-  const height = layout.navbarHeight
+const mapStateToProps = (state) => {
+  const { height } = state.navbar
 
+  return {
+    height
+  }
+}
+
+export const NavBar = connect(mapStateToProps)(glamorous.div(({layout, theme, height}) => {
   return {
     position: 'fixed',
     top: '0',
@@ -15,9 +22,9 @@ export const NavBar = glamorous.div(({layout, theme}) => {
     color: theme.colors.brandText,
     backgroundColor: theme.colors.primary1
   }
-})
+}))
 
-export const BrandArea = glamorous.div(({layout, theme}) => {
+export const BrandArea = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
   const width = layout.huge
   const fontSize = theme.text.brandSize
 
@@ -29,4 +36,4 @@ export const BrandArea = glamorous.div(({layout, theme}) => {
     textTransform: 'uppercase',
     fontWeight: '300'
   }
-})
+}))

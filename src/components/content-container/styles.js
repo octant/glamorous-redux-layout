@@ -1,7 +1,13 @@
 import glamorous from 'glamorous'
+import { connect } from 'react-redux'
 
-export const ContentContainer = glamorous.div(({layout, theme}) => {
-  const top = layout.navbarHeight + layout.subnavHeight
+const mapStateToProps = (state, props) => {
+  const layout = {...props.layout, navbar: state.navbar}
+  return {layout}
+}
+
+export const ContentContainer = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
+  const top = layout.navbar.height + layout.subnavHeight
   const left = layout.sidebarWidth
 
   return {
@@ -13,4 +19,4 @@ export const ContentContainer = glamorous.div(({layout, theme}) => {
     padding: '0.5rem',
     backgroundColor: theme.colors.backgroundDark3
   }
-})
+}))
