@@ -7,7 +7,7 @@ import theme from './themes/main'
 import Content from './components/content-container'
 import TitleBar from './components/titlebar'
 import SideBar from './components/sidebar'
-import SubNav from './components/subnav'
+import TopBar from './components/topbar'
 
 import {
   Icon,
@@ -41,7 +41,7 @@ class App extends Component {
           <Content>
             <h1>Content</h1>
           </Content>
-          <SubNav>
+          <TopBar>
             <Links>
               <Link id='3' onClick={this.handleClick()} selected={this.state.selectedLink === '3'} position='top'>
                 About
@@ -53,11 +53,11 @@ class App extends Component {
                 Account
               </Link>
             </Links>
-          </SubNav>
+          </TopBar>
           <SideBar>
             <Links>
-              <Link id='0' onClick={this.handleClick()} selected={this.state.selectedLink === '0'}><Icon className='fa fa-home' /> Home</Link>
-              <Link id='1' onClick={this.handleClick()} selected={this.state.selectedLink === '1'}><Icon className='fa fa-tachometer' /> Dashboard</Link>
+              <Link id='0' onClick={this.handleClick('shrink')} selected={this.state.selectedLink === '0'}><Icon className='fa fa-home' /> Home</Link>
+              <Link id='1' onClick={this.handleClick('grow')} selected={this.state.selectedLink === '1'}><Icon className='fa fa-tachometer' /> Dashboard</Link>
               <Link id='2' onClick={this.handleClick()} selected={this.state.selectedLink === '2'}><Icon className='fa fa-gears' /> Config</Link>
             </Links>
           </SideBar>

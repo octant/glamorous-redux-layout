@@ -6,16 +6,16 @@ const mapStateToProps = (state, props) => {
     ...props.layout,
     titlebar: state.titlebar,
     sidebar: state.sidebar,
-    subnav: state.subnav
+    topbar: state.topbar
   }
 
   return {layout}
 }
 
-export const SubNav = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
+export const TopBar = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
   const top = layout.titlebar.height
   const left = layout.sidebar.width
-  const height = layout.subnav.height
+  const height = layout.topbar.height
 
   return {
     position: 'fixed',

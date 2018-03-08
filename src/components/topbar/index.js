@@ -1,16 +1,16 @@
 import React from 'react'
 
 import {
-  SubNav,
+  TopBar,
   TitleArea
 } from './styles'
 
 const Wrapper = ({children}) => (
-  <SubNav>
+  <TopBar>
     <TitleArea>
       {children}
     </TitleArea>
-  </SubNav>
+  </TopBar>
 )
 
 export default Wrapper
