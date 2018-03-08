@@ -9,15 +9,12 @@ import TitleBar from './components/titlebar'
 import SideBar from './components/sidebar'
 import TopBar from './components/topbar'
 
-import {
-  Icon,
-  Links,
-  Link
-} from './components/link-list'
+import * as Horizontal from './components/menu/horizontal'
 
 import {
   Menu,
-  Item
+  Item,
+  Icon
 } from './components/menu/vertical'
 
 class App extends Component {
@@ -47,17 +44,17 @@ class App extends Component {
             <h1>Content</h1>
           </Content>
           <TopBar>
-            <Links>
-              <Link id='3' onClick={this.handleClick()} selected={this.state.selectedLink === '3'} position='top'>
+            <Horizontal.Menu>
+              <Horizontal.Item id='3' onClick={this.handleClick()} selected={this.state.selectedLink === '3'} position='top'>
                 About
-              </Link>
-              <Link id='4' onClick={this.handleClick()} selected={this.state.selectedLink === '4'} position='top'>
+              </Horizontal.Item>
+              <Horizontal.Item id='4' onClick={this.handleClick()} selected={this.state.selectedLink === '4'} position='top'>
                 My Tasks
-              </Link>
-              <Link id='5' onClick={this.handleClick()} selected={this.state.selectedLink === '5'} position='top'>
+              </Horizontal.Item>
+              <Horizontal.Item id='5' onClick={this.handleClick()} selected={this.state.selectedLink === '5'} position='top'>
                 Account
-              </Link>
-            </Links>
+              </Horizontal.Item>
+            </Horizontal.Menu>
           </TopBar>
           <SideBar>
             <Menu>

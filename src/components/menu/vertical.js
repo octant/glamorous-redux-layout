@@ -19,3 +19,8 @@ export const Item = glamorous.ul({
 
   return style
 })
+
+export const Icon = glamorous.i({
+  color: 'white',
+  padding: '0.5em'
+})
