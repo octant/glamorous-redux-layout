@@ -23,6 +23,7 @@ export const SubNav = connect(mapStateToProps)(glamorous.div(({layout, theme}) =
     left: `${left}rem`,
     height: `${height}rem`,
     width: `calc(100vw - ${left}rem)`,
+    paddingTop: '0.4em',
     color: theme.colors.titlebarText,
     backgroundColor: theme.colors.backgroundDark2
   }
@@ -31,7 +32,6 @@ export const SubNav = connect(mapStateToProps)(glamorous.div(({layout, theme}) =
 export const TitleArea = glamorous.div(({layout, theme}) => {
   return {
     position: 'absolute',
-    fontSize: '1.1em',
     bottom: '0.4em'
   }
 })
