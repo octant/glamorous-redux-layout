@@ -5,7 +5,7 @@ import { ThemeProvider } from 'glamorous'
 
 import theme from './themes/main'
 import Content from './components/content-container'
-import NavBar from './components/navbar'
+import TitleBar from './components/titlebar'
 import SideBar from './components/sidebar'
 import SubNav from './components/subnav'
 
@@ -61,7 +61,7 @@ class App extends Component {
               <Link id='2' onClick={this.handleClick()} selected={this.state.selectedLink === '2'}><Icon className='fa fa-gears' /> Config</Link>
             </Links>
           </SideBar>
-          <NavBar />
+          <TitleBar />
         </div>
       </ThemeProvider>
     )

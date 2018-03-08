@@ -4,19 +4,19 @@ import { connect } from 'react-redux'
 const mapStateToProps = (state, props) => {
   const layout = {
     ...props.layout,
-    navbar: state.navbar,
+    titlebar: state.titlebar,
     sidebar: state.sidebar
   }
 
   return {layout}
 }
 
-export const NavBar = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
+export const TitleBar = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
   return {
     position: 'fixed',
     top: '0',
     left: '0',
-    height: `${layout.navbar.height}rem`,
+    height: `${layout.titlebar.height}rem`,
     width: '100vw',
     display: 'flex',
     flexDirection: 'column',

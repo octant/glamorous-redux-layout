@@ -1,5 +1,5 @@
-export const SHRINK = 'navbar/SHRINK'
-export const GROW = 'navbar/GROW'
+export const SHRINK = 'titlebar/SHRINK'
+export const GROW = 'titlebar/GROW'
 
 const initialState = {
   minHeight: 2,

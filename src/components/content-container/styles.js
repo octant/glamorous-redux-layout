@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 const mapStateToProps = (state, props) => {
   const layout = {
     ...props.layout,
-    navbar: state.navbar,
+    titlebar: state.titlebar,
     sidebar: state.sidebar,
     subnav: state.subnav
   }
@@ -13,7 +13,7 @@ const mapStateToProps = (state, props) => {
 }
 
 export const ContentContainer = connect(mapStateToProps)(glamorous.div(({layout, theme}) => {
-  const top = layout.navbar.height + layout.subnav.height
+  const top = layout.titlebar.height + layout.subnav.height
   const left = layout.sidebar.width
 
   return {

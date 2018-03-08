@@ -1,16 +1,16 @@
 import React from 'react'
 
 import {
-  NavBar,
+  TitleBar,
   BrandArea
 } from './styles'
 
 const Wrapper = () => (
-  <NavBar>
+  <TitleBar>
     <BrandArea>
       <span className='brand'><i className='fa fa-cube' aria-hidden='true' /> Company Name</span>
     </BrandArea>
-  </NavBar>
+  </TitleBar>
 )
 
 export default Wrapper
