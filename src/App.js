@@ -15,6 +15,11 @@ import {
   Link
 } from './components/link-list'
 
+import {
+  Menu,
+  Item
+} from './components/menu/vertical'
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -55,11 +60,11 @@ class App extends Component {
             </Links>
           </TopBar>
           <SideBar>
-            <Links>
-              <Link id='0' onClick={this.handleClick('shrink')} selected={this.state.selectedLink === '0'}><Icon className='fa fa-home' /> Home</Link>
-              <Link id='1' onClick={this.handleClick('grow')} selected={this.state.selectedLink === '1'}><Icon className='fa fa-tachometer' /> Dashboard</Link>
-              <Link id='2' onClick={this.handleClick()} selected={this.state.selectedLink === '2'}><Icon className='fa fa-gears' /> Config</Link>
-            </Links>
+            <Menu>
+              <Item id='0' onClick={this.handleClick()} selected={this.state.selectedLink === '0'}><Icon className='fa fa-home' /> Home</Item>
+              <Item id='1' onClick={this.handleClick()} selected={this.state.selectedLink === '1'}><Icon className='fa fa-tachometer' /> Dashboard</Item>
+              <Item id='2' onClick={this.handleClick()} selected={this.state.selectedLink === '2'}><Icon className='fa fa-gears' /> Config</Item>
+            </Menu>
           </SideBar>
           <TitleBar />
         </div>
