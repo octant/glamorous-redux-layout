@@ -9,13 +9,9 @@ import TitleBar from './components/titlebar'
 import SideBar from './components/sidebar'
 import TopBar from './components/topbar'
 
+import { Nav } from './components/menu/'
 import * as Horizontal from './components/menu/horizontal'
-
-import {
-  Menu,
-  Item,
-  Icon
-} from './components/menu/vertical'
+import * as Vertical from './components/menu/vertical'
 
 class App extends Component {
   constructor (props) {
@@ -44,24 +40,34 @@ class App extends Component {
             <h1>Content</h1>
           </Content>
           <TopBar>
-            <Horizontal.Menu>
-              <Horizontal.Item id='3' onClick={this.handleClick()} selected={this.state.selectedLink === '3'} position='top'>
-                About
-              </Horizontal.Item>
-              <Horizontal.Item id='4' onClick={this.handleClick()} selected={this.state.selectedLink === '4'} position='top'>
-                My Tasks
-              </Horizontal.Item>
-              <Horizontal.Item id='5' onClick={this.handleClick()} selected={this.state.selectedLink === '5'} position='top'>
-                Account
-              </Horizontal.Item>
-            </Horizontal.Menu>
+            <Nav horizontal>
+              <Horizontal.Menu menuStyle='inline'>
+                <Horizontal.Item id='3' onClick={this.handleClick()} selected={this.state.selectedLink === '3'}>
+                  About
+                </Horizontal.Item>
+                <Horizontal.Item id='4' onClick={this.handleClick()} selected={this.state.selectedLink === '4'}>
+                  My Tasks
+                </Horizontal.Item>
+                <Horizontal.Item id='5' onClick={this.handleClick()} selected={this.state.selectedLink === '5'}>
+                  Account
+                </Horizontal.Item>
+              </Horizontal.Menu>
+            </Nav>
           </TopBar>
           <SideBar>
-            <Menu>
-              <Item id='0' onClick={this.handleClick()} selected={this.state.selectedLink === '0'}><Icon className='fa fa-home' /> Home</Item>
-              <Item id='1' onClick={this.handleClick()} selected={this.state.selectedLink === '1'}><Icon className='fa fa-tachometer' /> Dashboard</Item>
-              <Item id='2' onClick={this.handleClick()} selected={this.state.selectedLink === '2'}><Icon className='fa fa-gears' /> Config</Item>
-            </Menu>
+            <Nav>
+              <Vertical.Menu>
+                <Vertical.Item id='0' onClick={this.handleClick()} selected={this.state.selectedLink === '0'}>
+                  <Vertical.Icon className='fa fa-home' /> Home
+                </Vertical.Item>
+                <Vertical.Item id='1' onClick={this.handleClick()} selected={this.state.selectedLink === '1'}>
+                  <Vertical.Icon className='fa fa-tachometer' /> Dashboard
+                </Vertical.Item>
+                <Vertical.Item id='2' onClick={this.handleClick()} selected={this.state.selectedLink === '2'}>
+                  <Vertical.Icon className='fa fa-gears' /> Config
+                </Vertical.Item>
+              </Vertical.Menu>
+            </Nav>
           </SideBar>
           <TitleBar />
         </div>

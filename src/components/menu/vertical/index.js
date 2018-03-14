@@ -1,16 +1,23 @@
 import glamorous from 'glamorous'
 
-export const Menu = glamorous.ul(({theme}) => ({
-  color: theme.colors.text
-}))
+export const Menu = glamorous.ul({
+  listStyle: 'none',
+  padding: 0,
+  margin: 0
+}, ({theme}) => {
+  const style = {
+    color: theme.colors.text
+  }
 
-export const Item = glamorous.ul({
-  textDecoration: 'none',
+  return style
+})
+
+export const Item = glamorous.li({
   ':hover': {
     cursor: 'pointer'
   }
 }, ({theme, selected}) => {
-  const style = {}
+  let style = {}
 
   if (selected) {
     style.backgroundColor = theme.colors.backgroundDark3
